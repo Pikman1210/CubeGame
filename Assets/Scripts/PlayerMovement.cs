@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour {
+
+    // Reference to Rigidbody component called rb
+    public Rigidbody rb;
+
+    public float forwardForce = 2000f;
+    public float sidewaysForce = 500f;
+
+    // Update is called once per frame
+    void FixedUpdate() // Use FixedUpdate instead of Update when calculating physics idk why ¯\_(:)_/¯
+    {
+        // Time.deltaTime changes value depending on frame rate, so cube doesn't zoom for me, but snail for others
+        rb.AddForce(0, 0, forwardForce * Time.deltaTime); // Adds forward force (x,y,z)
+
+        if ( Input.GetKey("d") )
+        {
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
+
+        if (Input.GetKey("a") )
+        {
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
+
+        if (rb.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
+}
