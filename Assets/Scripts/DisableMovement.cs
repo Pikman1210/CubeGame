@@ -11,6 +11,7 @@ public class DisableMovement : MonoBehaviour{
 
     private void DisablePlayerMovement ()
     {
+        FindObjectOfType<AudioManager>().Play("MovementStop");
         movement.enabled = false;
     }
 

@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4481156589345644278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4481156589345644272}
+  - component: {fileID: 4481156589345644279}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4481156589345644272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481156589345644278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4481156589345644279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481156589345644278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7888a2bf435ec04893ab14d221138c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Music
+    clip: {fileID: 8300000, guid: b4acdc5df3761354b94d4538f27560f8, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 77c708a690565e644a59fdc057f40650, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ClickSFX
+    clip: {fileID: 8300000, guid: bf259911daebca346b18e1d4d65f7c96, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FallingGameOver
+    clip: {fileID: 8300000, guid: 83e3024a560f9774080b8698f403b513, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ObstacleGameOver
+    clip: {fileID: 8300000, guid: 3c5d4719968d7f4499741a8e6f921d11, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.85
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LevelComplete
+    clip: {fileID: 8300000, guid: 98c88f69793b804419e0635814a4b818, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.859
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SecretTriggered
+    clip: {fileID: 8300000, guid: 573051277b4c69942993ed1a946e1e24, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.859
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SecretLevelComplete
+    clip: {fileID: 8300000, guid: 5254556a503a63a43ad591b7c21d8ef5, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.859
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MovementStart
+    clip: {fileID: 8300000, guid: 29a09c546243e434d9a1cce47cc8f8a0, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.859
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MovementStop
+    clip: {fileID: 8300000, guid: 6a5e4302444c53c44910c40e6714da92, type: 3}
+    group: {fileID: 24300002, guid: 2ddffec55c6add34abeb910045c93d01, type: 2}
+    volume: 0.859
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

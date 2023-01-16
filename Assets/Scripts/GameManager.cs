@@ -10,6 +10,14 @@ public class GameManager : MonoBehaviour
     public GameObject secretLevelUI;
     public PlayerMovement movement;
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
     public void CompleteLevel ()
     {
         completeLevelUI.SetActive(true);
@@ -31,7 +39,7 @@ public class GameManager : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Debug.Log("Game over loser lmfao");
+            Debug.Log("Game Over");
             Invoke("Restart", restartDelay);
         }
     }

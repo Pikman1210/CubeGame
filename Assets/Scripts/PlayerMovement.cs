@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour {
     // Reference to Rigidbody component called rb
     public Rigidbody rb;
 
+    bool dead = false;
     public float forwardForce = 2000f;
     public float sidewaysForce = 500f;
 
@@ -26,7 +27,12 @@ public class PlayerMovement : MonoBehaviour {
 
         if (rb.position.y < -1f)
         {
-            FindObjectOfType<GameManager>().EndGame();
+            if (dead == false)
+            {
+                dead = true;
+                FindObjectOfType<AudioManager>().Play("FallingGameOver");
+                FindObjectOfType<GameManager>().EndGame();
+            }
         }
     }
 }

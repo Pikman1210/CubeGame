@@ -12,6 +12,7 @@ public class EnableMovement : MonoBehaviour {
 
     private void EnablePlayerMovement()
     {
+        FindObjectOfType<AudioManager>().Play("MovementStart");
         movement.enabled = true;
     }
 }
