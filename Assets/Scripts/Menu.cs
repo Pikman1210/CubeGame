@@ -3,12 +3,16 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Menu : MonoBehaviour {
 
     public AudioMixer audioMixer;
 
-    public TMPro.TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
+
+    public TextMeshProUGUI SecretBeatenText;
+    public TextMeshProUGUI HighScoreSaveText;
 
     Resolution[] resolutions;
 
@@ -37,11 +41,31 @@ public class Menu : MonoBehaviour {
         resolutionDropdown.RefreshShownValue();
     }
 
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Space))
+        {
+            Debug.Log("Dev code input");
+            // put code here to switch to a scene that lets edit PlayerPrefs with a back button to welcome part of menu
+        }
+    }
+
     // Main Menu
     public void StartGame ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Goes to next scene in order
         FindObjectOfType<AudioManager>().Play("Music");
+    }
+
+    public void StartEndless ()
+    {
+        Debug.Log("Start Endless Mode");
+        SceneManager.LoadScene("Endless");
+    }
+
+    public void StartLevelEditor ()
+    {
+        Debug.Log("Start Level Editor");
     }
 
     public void Quit()
@@ -71,6 +95,22 @@ public class Menu : MonoBehaviour {
     public void SetFullscreen (bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    // Sava Data Menu
+
+    public void LoadSaveData ()
+    {
+        string SecretBeaten = PlayerPrefs.GetString("SecretBeaten", "false");
+        SecretBeatenText.text = SecretBeaten;
+
+        string HighScore = PlayerPrefs.GetString("HighScore", "0");
+        HighScoreSaveText.text = HighScore;
+    }
+
+    public void ResetSavaData ()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
 }

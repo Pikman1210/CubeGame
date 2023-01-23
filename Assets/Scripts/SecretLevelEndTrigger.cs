@@ -8,5 +8,6 @@ public class SecretLevelEndTrigger : MonoBehaviour {
     {
         FindObjectOfType<AudioManager>().Play("SecretLevelComplete");
         gameManager.SecretCompleteLevel();
+        PlayerPrefs.SetString("SecretBeaten", "true");
     }
 }
