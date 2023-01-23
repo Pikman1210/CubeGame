@@ -15,12 +15,12 @@ public class PlayerMovement : MonoBehaviour {
         // Time.deltaTime changes value depending on frame rate, so cube doesn't zoom for me, but snail for others
         rb.AddForce(0, 0, forwardForce * Time.deltaTime); // Adds forward force (x,y,z)
 
-        if ( Input.GetKey("d") )
+        if ( Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
-        if (Input.GetKey("a") )
+        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
