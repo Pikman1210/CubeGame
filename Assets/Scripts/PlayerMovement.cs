@@ -25,14 +25,11 @@ public class PlayerMovement : MonoBehaviour {
             rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
-        if (rb.position.y < -1f)
+        if (rb.position.y < -1f && dead == false)
         {
-            if (dead == false)
-            {
-                dead = true;
-                FindObjectOfType<AudioManager>().Play("FallingGameOver");
-                FindObjectOfType<GameManager>().EndGame();
-            }
+            dead = true;
+            FindObjectOfType<AudioManager>().Play("FallingGameOver");
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
