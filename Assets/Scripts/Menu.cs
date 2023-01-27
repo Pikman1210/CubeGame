@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour {
 
     public TextMeshProUGUI SecretBeatenText;
     public TextMeshProUGUI HighScoreSaveText;
-    // public TextMeshProUGUI EndlessScoreText;
+    public TextMeshProUGUI EndlessScoreText;
 
     // UI Elements
     // Buttons
@@ -92,8 +92,8 @@ public class Menu : MonoBehaviour {
 
     public void StartEndless ()
     {
-        Debug.Log("Start Endless Mode");
         SceneManager.LoadScene("Endless");
+        FindObjectOfType<AudioManager>().Play("EndlessModeMusic");
     }
 
     public void StartLevelEditor ()
@@ -139,6 +139,9 @@ public class Menu : MonoBehaviour {
 
         int HighScore = PlayerPrefs.GetInt("Level", 0);
         HighScoreSaveText.text = HighScore.ToString();
+
+        float EndlessHighscore = PlayerPrefs.GetFloat("EndlessHighscore", 0);
+        EndlessScoreText.text = EndlessHighscore.ToString("0");
     }
 
     public void ResetSavaData ()

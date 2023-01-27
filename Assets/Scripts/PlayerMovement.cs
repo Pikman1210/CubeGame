@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     bool dead = false;
     public float forwardForce = 2000f;
     public float sidewaysForce = 500f;
+    private string CurrentScene;
 
     // Update is called once per frame
     void FixedUpdate() // Use FixedUpdate instead of Update when calculating physics idk why ¯\_(:)_/¯
@@ -28,6 +30,15 @@ public class PlayerMovement : MonoBehaviour {
         if (rb.position.y < -1f && dead == false)
         {
             dead = true;
+            CurrentScene = SceneManager.GetActiveScene().name;
+
+            if (CurrentScene == "Endless")
+            {
+                FindObjectOfType<AudioManager>().Play("FallingGameOver");
+                FindObjectOfType<GameManager>().EndEndless();
+                return;
+            }
+
             FindObjectOfType<AudioManager>().Play("FallingGameOver");
             FindObjectOfType<GameManager>().EndGame();
         }
