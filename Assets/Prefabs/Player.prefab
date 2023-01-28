@@ -143,4 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68429f9757163544a84f9fe89953a0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5527347864049333506}
   movement: {fileID: 5527347864049333512}
+  rb: {fileID: 5527347864049333511}

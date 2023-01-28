@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - PlayerMovementDisable
   - SecretTrigger
+  - HeightLimit
   layers:
   - Default
   - TransparentFX
